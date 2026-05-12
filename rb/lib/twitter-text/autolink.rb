@@ -430,7 +430,7 @@ module Twitter
       BOOLEAN_ATTRIBUTES = Set.new([:disabled, :readonly, :multiple, :checked]).freeze
 
       def tag_attrs(attributes)
-        attributes.keys.sort_by{|k| k.to_s}.inject("") do |attrs, key|
+        attributes.keys.sort_by{|k| k.to_s}.inject(String.new) do |attrs, key|
           value = attributes[key]
 
           if BOOLEAN_ATTRIBUTES.include?(key)
