@@ -39,7 +39,7 @@ module Twitter
       )
 
       def self.parse_string(string, options = {})
-        JSON.parse(string, options.merge(symbolize_names: true))
+        JSON.parse(string, **options, symbolize_names: true)
       end
 
       def self.parse_file(filename)
